@@ -22,8 +22,10 @@ function DeleteBook() {
 
     return (
         <div className='p-4'>
-            <BackButton />
-            <h1 className='text-3xl my-4'>Delete Book</h1>
+            <div className='flex w-full justify-between mb-5'>
+                <BackButton />
+                <h1 className='text-2xl'>Delete Book</h1>
+            </div>
             {loading ? <Spinner /> : ''}
             <div className='flex flex-col items-center border-2 border-sky-400'>
                 <h3 className='text-2xl'>Are you sure to delete?</h3>
