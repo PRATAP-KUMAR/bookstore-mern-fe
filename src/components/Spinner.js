@@ -2,7 +2,7 @@ import React from 'react'
 
 function Spinner() {
     return (
-        <div>Spinner...</div>
+        <div className="h-screen w-screen flex justify-center items-center">Spinner...</div>
     )
 }
 

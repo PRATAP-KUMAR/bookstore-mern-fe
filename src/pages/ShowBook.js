@@ -12,7 +12,6 @@ function ShowBook() {
         setLoading(true);
         const fetchBook = async () => {
             const book = await axios.get(`http://localhost:5555/books/${id}`);
-            console.log(book.data);
             setBook(book.data);
             setLoading(false);
         }
