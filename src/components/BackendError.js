@@ -13,7 +13,7 @@ function BackendError() {
                 <p>
                     Please follow the instructions from <span>
                         <a
-                            href='https://github.com/PRATAP-KUMAR/mern-be-practice'
+                            href='https://github.com/PRATAP-KUMAR/bookstore-mern-be'
                             aria-label='GitHub Link'
                             target="_blank"
                             rel="noreferrer"
