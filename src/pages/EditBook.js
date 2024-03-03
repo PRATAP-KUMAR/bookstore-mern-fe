@@ -45,40 +45,47 @@ function EditBook() {
     }
 
     return (
-        <div className='p-4'>
-            <Navbar link={"/"} text="Edit Book" />
+        <div>
+            <Navbar link={"/"} text="EDIT BOOK" pos="left" />
             {
                 loading ? null :
                     (
-                        <div className='flex flex-col border-2'>
-                            <div className='my-4'>
-                                <label className='text-xl mr-4 text-gray-500'>Title</label>
-                                <input
-                                    type='text'
-                                    value={title}
-                                    onChange={(e) => setTitle(e.target.value)}
-                                    className='border-2 border-gray-500 px-4 py-2 w-full'
-                                />
+                        <div className='m-5'>
+                            <div className='flex flex-col gap-2 bg-slate-100'>
+                                <div className='flex flex-col justify-center'>
+                                    <lable className="text-left text-gray-500">Title</lable>
+                                    <input
+                                        type='text'
+                                        placeholder='Title'
+                                        value={title}
+                                        onChange={(e) => setTitle(e.target.value)}
+                                        className='border-2 border-sky-200 focus:border-none focus:outline-sky-500 px-4 py-2 w-full'
+                                    />
+                                </div>
+                                <div className='flex flex-col justify-center'>
+                                    <lable className="text-left text-gray-500">Author</lable>
+                                    <input
+                                        type='text'
+                                        placeholder='Author'
+                                        value={author}
+                                        onChange={(e) => setAuthor(e.target.value)}
+                                        className='border-2 border-sky-200 focus:border-none focus:outline-sky-500 px-4 py-2 w-full'
+                                    />
+                                </div>
+                                <div className='flex flex-col justify-center'>
+                                    <lable className="text-left text-gray-500">Publish Year</lable>
+                                    <input
+                                        type='text'
+                                        placeholder='Publish Year'
+                                        value={publishYear}
+                                        onChange={(e) => setPublishYear(e.target.value)}
+                                        className='border-2 border-sky-200 focus:border-none focus:outline-sky-500 px-4 py-2 w-full'
+                                    />
+                                </div>
+                                <div className='flex items-center justify-center'>
+                                    <button className='p-2 bg-sky-300' onClick={handleEditBook}>Save</button>
+                                </div>
                             </div>
-                            <div className='my-4'>
-                                <label className='text-xl mr-4 text-gray-500'>Author</label>
-                                <input
-                                    type='text'
-                                    value={author}
-                                    onChange={(e) => setAuthor(e.target.value)}
-                                    className='border-2 border-gray-500 px-4 py-2 w-full'
-                                />
-                            </div>
-                            <div className='my-4'>
-                                <label className='text-xl mr-4 text-gray-500'>Publish Year</label>
-                                <input
-                                    type='text'
-                                    value={publishYear}
-                                    onChange={(e) => setPublishYear(e.target.value)}
-                                    className='border-2 border-gray-500 px-4 py-2 w-full'
-                                />
-                            </div>
-                            <button className='p-2 bg-sky-300' onClick={handleEditBook}>Save</button>
                         </div>
                     )
             }

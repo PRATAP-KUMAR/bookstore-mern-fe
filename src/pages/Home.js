@@ -15,10 +15,8 @@ function Home() {
         setLoading(true);
         axios.get("http://localhost:5555/books")
             .then(response => {
-                setTimeout(() => {
-                    setBooks(response.data.data);
-                    setLoading(false);
-                }, 200)
+                setBooks(response.data.data);
+                setLoading(false);
             })
             .catch((error) => {
                 console.log(error.message);
@@ -35,26 +33,26 @@ function Home() {
                         !books.length ? <NoBooks /> :
                             (
                                 <div>
-                                    <Navbar link="/books/create" text="Books" />
-                                    <div className='mx-20'>
+                                    <Navbar link="/books/create" text="BOOKS" pos="right" />
+                                    <div className='m-5 bg-slate-100'>
                                         <table className='w-full'>
                                             <thead>
                                                 <tr>
-                                                    <th className='border border-slate-600'>S.No</th>
-                                                    <th className='border border-slate-600'>Title</th>
-                                                    <th className='border border-slate-600'>Author</th>
-                                                    <th className='border border-slate-600'>Publish Year</th>
-                                                    <th className='border border-slate-600'>Actions</th>
+                                                    <th className='border border-sky-600'>S.No</th>
+                                                    <th className='border border-sky-600'>Title</th>
+                                                    <th className='border border-sky-600'>Author</th>
+                                                    <th className='border border-sky-600'>Publish Year</th>
+                                                    <th className='border border-sky-600'>Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 {books.map((book, index) => (
                                                     <tr key={book._id} className='h-8'>
-                                                        <td className='border border-slate-700 text-center'>{index + 1}</td>
-                                                        <td className='border border-slate-700 text-center'>{book.title}</td>
-                                                        <td className='border border-slate-700 text-center'>{book.author}</td>
-                                                        <td className='border border-slate-700 text-center'>{book.publishYear}</td>
-                                                        <td className='border border-slate-700 text-center'>
+                                                        <td className='border border-sky-600 text-center'>{index + 1}</td>
+                                                        <td className='border border-sky-600 text-center'>{book.title}</td>
+                                                        <td className='border border-sky-600 text-center'>{book.author}</td>
+                                                        <td className='border border-sky-600 text-center'>{book.publishYear}</td>
+                                                        <td className='border border-sky-600 text-center'>
                                                             <div className='flex justify-center gap-x-4'>
                                                                 <Link to={`books/details/${book._id}`}
                                                                     className='text-green-500 hover:text-blue-500'>
