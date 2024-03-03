@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function NoBooks() {
     return (
         <div className="h-screen w-screen bg-gray-400 flex flex-col justify-center items-center text-3xl">
-            <div className='bg-rose-200 text-center p-20 rounded-3xl'>
+            <div className='bg-white text-center p-20 rounded-3xl'>
                 <p>
                     There are no books to display.
                 </p>

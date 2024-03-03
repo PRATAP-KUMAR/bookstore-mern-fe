@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import BackButton from '../components/BackButton';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 function CreateBook() {
 
@@ -31,10 +32,7 @@ function CreateBook() {
 
     return (
         <div className='p-4'>
-            <div className='flex w-full justify-between mb-5'>
-                <BackButton />
-                <h1 className='text-2xl'>Create Book</h1>
-            </div>
+            <Navbar link={"/"} text="Create Book" />
             {
                 loading ? null :
                     (

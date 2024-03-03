@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import BackButton from '../components/BackButton';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 function EditBook() {
 
@@ -46,10 +46,7 @@ function EditBook() {
 
     return (
         <div className='p-4'>
-            <div className='flex w-full justify-between mb-5'>
-                <BackButton />
-                <h1 className='text-2xl'>Edit Book</h1>
-            </div>
+            <Navbar link={"/"} text="Edit Book" />
             {
                 loading ? null :
                     (

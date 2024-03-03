@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import BackEndError from '../components/BackendError';
 import NoBooks from '../components/NoBooks';
+import Navbar from '../components/Navbar';
 
 function Home() {
     const [books, setBooks] = useState([]);
@@ -34,12 +35,7 @@ function Home() {
                         !books.length ? <NoBooks /> :
                             (
                                 <div>
-                                    <div className='flex items-center justify-between px-20 py-10'>
-                                        <h2>Books</h2>
-                                        <Link to={'books/create'}>
-                                            Add a book
-                                        </Link>
-                                    </div>
+                                    <Navbar link="/books/create" text="Books" />
                                     <div className='mx-20'>
                                         <table className='w-full'>
                                             <thead>
@@ -60,13 +56,16 @@ function Home() {
                                                         <td className='border border-slate-700 text-center'>{book.publishYear}</td>
                                                         <td className='border border-slate-700 text-center'>
                                                             <div className='flex justify-center gap-x-4'>
-                                                                <Link to={`books/details/${book._id}`}>
+                                                                <Link to={`books/details/${book._id}`}
+                                                                    className='text-green-500 hover:text-blue-500'>
                                                                     Book Details
                                                                 </Link>
-                                                                <Link to={`books/edit/${book._id}`}>
+                                                                <Link to={`books/edit/${book._id}`}
+                                                                    className='text-orange-500 hover:text-blue-500'>
                                                                     Edit Book
                                                                 </Link>
-                                                                <Link to={`books/delete/${book._id}`}>
+                                                                <Link to={`books/delete/${book._id}`}
+                                                                    className='text-red-500 hover:text-blue-500'>
                                                                     Delete Book
                                                                 </Link>
                                                             </div>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import BackButton from '../components/BackButton';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import Spinner from '../components/Spinner';
+import Navbar from '../components/Navbar';
 
 function DeleteBook() {
     const [loading, setLoading] = useState(false);
@@ -22,10 +22,7 @@ function DeleteBook() {
 
     return (
         <div className='p-4'>
-            <div className='flex w-full justify-between mb-5'>
-                <BackButton />
-                <h1 className='text-2xl'>Delete Book</h1>
-            </div>
+            <Navbar link={"/"} text="Delete Book" />
             {loading ? <Spinner /> : ''}
             <div className='flex flex-col items-center border-2 border-sky-400'>
                 <h3 className='text-2xl'>Are you sure to delete?</h3>
